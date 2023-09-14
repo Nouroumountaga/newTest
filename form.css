@@ -49,8 +49,8 @@ label{
 @media screen and (max-width:700px) {
     .container{
         background-color:darkcyan;
-        margin-right: 20%;
-        margin-left: 20%;
+        margin-right: 17%;
+        margin-left: 18%;
         padding: 20px;
         box-shadow: 4px 4px 4px rgb(218, 217, 217);
         margin-top: 5vh;
@@ -63,12 +63,12 @@ label{
     label{
         font-weight: 600;
         color: rgb(255, 255, 255);
-        margin: 20px;
+        margin: 10px;
     }
     .form{
         line-height: 30px;
         margin: 20px;
         text-align: center;
-        height: 23vh;
+        height: 24vh;
     }
 }
