@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <nav>
+                <ul>
+                    <li><a href="" style="color: #121212;">Accueil</a></li>
+                    <li><a href="#">Assistance</a></li>
+                    <li><a href="form.html">Admin</a></li>
+                    <li><a href="service.html" target="_blank">Services</a></li>
+                </ul>
+            </nav>
+        </div>
+        <h1>FAST LIVRAISON</h1>
+    </header>
+    <div class="btn">
+        <i class="fa fa-bars" style="font-size:18px; color:gold; cursor: pointer;" id="btnnew"></i>
+    </div>
+    <div class="faBarre">
+        <nav class="nav">
+            <button id="fermer">X</button>
+            <ul>
+                <li><a href="">Accueil</a></li>
+                <li><a href="">Assistance</a></li>
+                <li><a href="form.html">Admin</a></li>
+                <li><a href="service.html">Services</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <main>
+            <div class="button">
+                <hr style="color: rgb(43, 42, 44);">
+                <button><a href="btq.html" target="_blank">J'estime le prix d'envoi</a></button>
+                <button><a href="live.html">Je suis transporteur</a></button>
+            </div>
+            <h5>Contact: +221 78 184 30 73</h5>
+
+        </main>
+    </div>
+    <script>
+         var buttonn = document.querySelector('#btnnew');
+         var fanav = document.querySelector('.nav');
+         buttonn.addEventListener('click',()=>{
+             fanav.classList.add('active')
+         })
+         var fermer = document.querySelector('#fermer');
+         fermer.addEventListener('click',()=>{
+             fanav.classList.remove('active')
+         })
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+body{
+    background-color:#efeded;
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+}
+*{
+    margin: 0;
+}
+.title h1,h2{
+    text-align: center;
+}
+.container{
+    display: flex;
+    background-color: #fff;
+    margin-right: 10%;
+    margin-left: 10%;
+    padding: 20px;
+    box-shadow: 4px 4px 4px rgb(218, 217, 217);
+    margin-top: 10vh;
+    height: 50vh;
+    align-items: center;
+}
+.row{
+    display: flex;
+    width: 100%;
+}
+.user{
+    width: 30%;
+    border: 1px solid;
+    padding: 10px;
+    background-color: crimson;
+    border-radius: 5px;
+    margin: 2%;
+}
+.clear{
+    width: 30%;
+    margin: 2%;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: cadetblue;
+    padding: 10px;
+}
+.chiffreA{
+    width: 30%;
+    margin: 2%;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: darkorange;
+}
+.row span{
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+P{
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+}
+.para p{
+    font-size: 40px;
+}
+.clear button{
+    padding: 7px;
+    background-color: #fff;
+}
+button:hover{
+    background-color: cadetblue;
+}
+@media screen and (max-width:800px) {
+    .container{
+        height: 60vh;
+        margin-top: 0;
+    }
+    .clear button{
+        padding: 7px;
+        background-color: #fff;
+        width: 10%;
+    }
+    .row{
+        display: grid;
+    }
+    .user{
+        width: 80%;
+        border: 1px solid;
+        padding: 10px;
+        background-color: crimson;
+        border-radius: 5px;
+        margin: 2%;
+        margin-left: 10%;
+    }
+    .clear{
+        width: 80%;
+        margin: 2%;
+        border: 1px solid;
+        border-radius: 5px;
+        margin-left: 10%;
+        background-color: cadetblue;
+        padding: 10px;
+    }
+    .chiffreA{
+        width: 80%;
+        margin: 2%;
+        margin-left: 10%;
+        border: 1px solid;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: darkorange;
+    }
+}

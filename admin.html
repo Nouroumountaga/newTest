@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="admin.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1>Administrateur DASHBOARD</h1>
+        <h2>ANNEE 2023/2024</h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="user">
+                <h3>
+                    NOMBRE DE CLIENT
+                </h3>
+                <div class="para" id="para">
+                    <p id="client"></p>
+                </div>
+            </div>
+            <div class="chiffreA">
+                <h3>CHIFFRE D'AFFAIRE</h3>
+                <div class="para">
+                    <p id="CA">0 FRANCS</p>
+                </div>
+            </div>
+            <div class="clear">
+                <h3>VIDER LE CACHE</h3>
+                <p>ceci permet d'effacer toutes les données c'est à dire toute les livraisons</p>
+                <button class="clear" style="cursor: pointer;">Vider</button>
+            </div>
+            <h4 id="h6"></h4>
+        </div>
+    </div>
+    <script>
+        const request = window.indexedDB.open('ma_base_de_donnees', 1);
+
+        request.onsuccess = function (event) {
+            const db = event.target.result;
+
+            // Ouvrir une transaction en lecture seule sur le magasin "utilisateurs"
+            const transaction = db.transaction(['utilisateurs'], 'readonly');
+            const objectStore = transaction.objectStore('utilisateurs');
+
+            // Créer un curseur pour parcourir les données
+            const cursorRequest = objectStore.openCursor();
+            var client = 0
+            cursorRequest.onsuccess = function (event) {
+                const cursor = event.target.result;
+                if (cursor) {
+                    const FRAIS = cursor.value.FRAIS;
+                    client += 1
+                    document.querySelector('#client').textContent = client
+                    document.querySelector('#CA').textContent = 500 * client + ' FRANCS'
+
+                    // Afficher les données dans un élément HTML (par exemple, une liste)
+                    // Passer au prochain enregistrement
+                    cursor.continue();
+                }
+            };
+            cursorRequest.onerror = function (event) {
+                console.error('Erreur lors de la récupération des données : ', event.target.error);
+            };
+        };
+
+        request.onerror = function (event) {
+            console.error('Erreur lors de l\'ouverture de la base de données : ', event.target.error);
+        };
+        var clearbtn = document.querySelector('.clear')
+        clearbtn.addEventListener('click',()=>{
+            if(confirm("Voulez vous supprimer toutes les données du site") == "ok"){
+                document.querySelector('#h6').textContent = "données effacées avec succées veuillez actualiser la page pour voir les resultats"
+            }
+            const request = window.indexedDB.open('ma_base_de_donnees', 1);
+            request.onsuccess = function (event) {
+            const db = event.target.result;
+
+            // Ouvrir une transaction en lecture seule sur le magasin "utilisateurs"
+            const transaction = db.transaction(['utilisateurs'], 'readwrite');
+            const objectStore = transaction.objectStore('utilisateurs');
+
+            // Créer un curseur pour parcourir les données
+            const clearRequest = objectStore.clear();
+
+            clearRequest.onsuccess = function (event) {
+                console.log('DATA deleted')
+                
+
+            };
+            clearRequest.onerror = function (event) {
+                console.error('Erreur lors de la suppression des données des données : ', event.target.error);
+            };
+        };
+
+        request.onerror = function (event) {
+            console.error('Erreur lors de l\'ouverture de la base de données : ', event.target.error);
+        };
+        })
+    </script>
+</body>
+
+</html>

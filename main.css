@@ -1,0 +1,579 @@
+**{
+    margin: 0;
+}
+.container{
+    background-image: url('concept-de-service-de-livraison-en-ligne-rapide-2btbkhx.jpg');
+    height: 90vh;
+    margin: 2%;
+    width: 80%;
+    margin-left: 9%;
+    box-shadow: 4px 4px 4px rgb(218, 217, 217);
+    background-size: 100% 100%;
+    padding: 10px;
+    border-radius: 20px;
+}
+*{margin: 0;padding: 0;}
+body{
+    background-color:#efeded;
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+}
+.div img{
+    width: 20%;
+}
+header {
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+}
+header h1{
+    margin: 0px;
+    font-size: 20px;
+    text-decoration: underline #f30808 2px;
+    color: #292C35;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+    color: rgb(0, 0, 0);
+}
+.btn{
+    display: block;
+}
+nav ul li:first-child{
+  
+    color: black;
+    padding: 10px;
+    font-weight: 600;
+    text-decoration: underline red 4px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #254c59;
+    font-weight: bold;
+
+    transition: 0.8s;
+}
+
+nav a:hover{
+    text-decoration: underline red 4px;
+}
+
+.faBarre{
+    display: none;
+}
+main{
+    position: absolute;
+    top: 85vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 14%;
+    width: 75%;
+}
+main a{
+    text-decoration: none;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #efeded;
+}
+main button{
+    background-color: darkred;
+    padding: 20px;
+    border-radius: 20px;
+}
+main button:hover{
+    color: rgb(130, 17, 17);
+    background-color: #efeded;
+}
+main a:hover{
+    color: black;
+}
+main h5{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+@media screen and (max-width:700px) {
+    nav{
+        display: none;
+    }
+    .btn{
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #160848;
+        left: 4%;
+        position: absolute;
+        top: 4vh;
+        display: block;
+    }
+    .faBarre{
+        display: block;
+    }
+    .faBarre .nav{
+        display: block;
+        height: 54vh;
+        position: absolute;
+        left: -100%;
+        width: 40%;
+        transition: 0.5s;
+        background-color: rgba(16, 11, 41, 0.808);
+        border-radius: 10px;
+    }
+    .nav.active{
+        left: 0;
+    }
+    .faBarre li{
+        display: block;
+        width: 85%;
+        font-weight: bold;
+        padding: 20px;
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .faBarre li:first-child{
+        background:none;
+        color: rgb(255, 255, 255);
+        height: 5%;
+        padding: 10px;
+        font-weight: 600;
+        text-decoration: underline rgb(206, 187, 12) 4px;
+    }
+    .faBarre li a{
+        font-weight: normal;
+        font-size: 20px;
+        color: #e0bc45;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        cursor: pointer;
+    }
+    .faBarre li a:hover{
+        text-decoration: underline rgb(228, 211, 19) 4px;
+    }
+    .faBarre button{
+        float: right;
+        padding: 10px;
+        color: gold;
+        font-size: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        border: 2px solid white;
+        background-color: rgb(32, 12, 55);
+    }
+    .faBarre button:hover{
+        background-color: #fff;
+        color: black;
+    }
+    .container{
+        background-image: url('61a2d727403bb357e4555fbd21904f63.jpg');
+        height: 90vh;
+        margin-top: 7vh;
+        background-repeat: no-repeat;
+        width: 94%;
+        box-shadow: 2px 2px 2px rgb(218, 217, 217);
+        background-size: 100% 50vh;
+        padding: 10px;
+        border-radius: 3px;
+        padding-top: 10vh;
+        margin-left: 0%;
+        margin-right: 0%;
+        overflow: hidden;
+
+    }
+    *{margin: 0;padding: 0;}
+    body{
+        background-color:#ffffff;
+        font-family: 'Courier New', Courier, monospace;
+        overflow: hidden;
+        height: 30vh;
+        padding: 5px;
+    }
+    main{
+        position: absolute;
+        top: 79%;
+        display: normal;
+        align-items: center;
+        flex-wrap: wrap;
+        left: 20%;
+        width: 65%;
+    }
+    main a{
+        text-decoration: none;
+        font-weight: normal;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: goldenrod;
+    }
+    .button{
+        display: flex;
+    }
+    main button{
+        background-color:#010b31;
+        padding:10px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+    main button:hover{
+        color: rgb(130, 17, 17);
+        background-color: #efeded;
+    }
+    main a:hover{
+        color: black;
+    }
+    main h5{
+        font-size: 10px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    header h1{
+        text-decoration: underline gold;
+    }
+}
+@media screen and (min-width:701px) and (max-width:850px) {
+    *{
+        margin: 0;
+    }
+    .container{
+        background-image: url('8cfa72fd3bc077735b9a37df80e56f7b.jpg');
+        height: 72vh;
+        margin: 0%;
+        width: 82%;
+        margin-left: 7%;
+        margin-right: 5%;
+        box-shadow: 4px 4px 4px rgb(218, 217, 217);
+        background-size: 100% 90%;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    *{margin: 0;padding: 0;}
+    body{
+        background-color:#efeded;
+        font-family: 'Courier New', Courier, monospace;
+        overflow-x: hidden;
+        padding: 10px;
+    }
+    .div img{
+        width: 20%;
+    }
+    header {
+        display: flex;
+        margin: 0;
+        justify-content: space-between;
+    }
+    header h1{
+        margin: 10px;
+        font-size: 17px;
+        text-decoration: underline #de0d0d 2px;
+        color: #292C35;
+    }
+    nav ul li{
+        list-style: none;
+        display: inline-block;
+        margin-right: 8px;
+        color: rgb(0, 0, 0);
+    }
+    .btn{
+        display: none;
+    }
+    nav ul li:first-child{
+        color: black;
+        padding: 10px;
+        font-weight: 600;
+        text-decoration: underline rgb(236, 12, 12) 4px;
+    }
+    nav ul li a{
+        text-decoration: none;
+        color: #254c59;
+        font-weight: bold;
+    
+        transition: 0.8s;
+    }
+    
+    nav a:hover{
+        text-decoration: underline red 4px;
+    }
+    
+    .faBarre{
+        display: none;
+    }
+    main{
+        position: absolute;
+        top: 97vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        left: 16%;
+        width: 75%;
+    }
+    main a{
+        text-decoration: none;
+        font-weight: bold;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #eb0e0e;
+    }
+    main button{
+        background-color: rgb(241, 244, 245);
+        padding: 10px;
+        margin: 10px;
+        border-radius: 20px;
+    }
+    main button:hover{
+        color: rgb(130, 17, 17);
+        background-color: #efeded;
+    }
+    main a:hover{
+        color: black;
+    }
+    main h5{
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    nav{
+        display: block;
+    }
+    .btn{
+        border-radius: 5px;
+        padding: 5px;
+        background-color: #e0bc45;
+        position: absolute;
+        top: 2.2vh;
+        display: none;
+    }
+    .faBarre{
+        display: none;
+    }
+
+    *{margin: 0;padding: 0;}
+
+    main{
+        position: absolute;
+        top: 86%;
+        display: normal;
+        align-items: center;
+        flex-wrap: wrap;
+        left: 4%;
+        width: 90%;
+    }
+    main a{
+        text-decoration: none;
+        font-weight: bold;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(228, 25, 35);
+    }
+    .button{
+        display: flex;
+    }
+
+    main a:hover{
+        color: black;
+    }
+    main h5{
+        font-size: 10px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .btn{
+        display: none;
+    }
+}
+@media screen and (min-width:851px) and (max-width:1000px) {
+    *{
+        margin: 0;
+    }
+    .btn{
+        display: none;
+    }
+    .container{
+        background-image: url('16424a4efad9b90ad5a8eabce11205f2.jpg');
+        height: 75vh;
+        margin:1%;
+        width: 80%;
+        box-shadow: 4px 4px 4px rgb(218, 217, 217);
+        background-size: 100% 100%;
+        padding: 10px;
+        margin-left: 8%;
+        border-radius: 20px;
+    }
+    *{margin: 0;padding: 0;}
+    body{
+        background-color:#efeded;
+        font-family: 'Courier New', Courier, monospace;
+        overflow-x: hidden;
+    }
+    .div img{
+        width: 20%;
+    }
+    header {
+        display: flex;
+        margin: 0;
+        justify-content: space-between;
+    }
+    header h1{
+        margin: 10px;
+        font-size: 20px;
+        text-decoration: underline #7c1717 2px;
+        color: #292C35;
+    }
+    nav ul li{
+        list-style: none;
+        display: inline-block;
+        margin-right: 20px;
+        color: rgb(0, 0, 0);
+    }
+    .btn{
+        display: none;
+    }
+    nav ul li:first-child{
+      
+        color: black;
+        padding: 10px;
+        font-weight: 600;
+        text-decoration: underline rgb(240, 129, 188) 4px;
+    }
+    nav ul li a{
+        text-decoration: none;
+        color: #254c59;
+        font-weight: bold;
+    
+        transition: 0.8s;
+    }
+    
+    nav a:hover{
+        text-decoration: underline red 4px;
+    }
+    
+    .faBarre{
+        display: none;
+    }
+    main{
+        position: absolute;
+        top: 87vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        left: 10%;
+        width: 75%;
+    }
+    main a{
+        text-decoration: none;
+        font-weight: bold;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #efeded;
+    }
+    main button{
+        background-color: rgb(8, 44, 74);
+        padding: 10px;
+        border-radius: 10px;
+    }
+    main button:hover{
+        color: rgb(130, 17, 17);
+        background-color: #efeded;
+    }
+    main a:hover{
+        color: black;
+    }
+    main h5{
+        font-size: 14px;
+       
+}}
+@media screen and (min-width:1001px) {
+    main h5{
+        font-size: 16px;
+       
+}
+*{
+    margin: 0;
+}
+.container{
+    background-image: url('concept-de-service-de-livraison-en-ligne-rapide-2btbkhx.jpg');
+    height: 80vh;
+    margin:1%;
+    width: 80%;
+    box-shadow: 4px 4px 4px rgb(218, 217, 217);
+    background-size: 100% 100%;
+    padding: 15px;
+    margin-left: 8%;
+    border-radius: 20px;
+}
+*{margin: 0;padding: 0;}
+body{
+    background-color:#f3f3f3;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
+}
+.div img{
+    width: 20%;
+}
+header {
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+}
+header h1{
+    margin: 10px;
+    font-size: 20px;
+    text-decoration: underline #da0404 2px;
+    color: #292C35;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+    color: rgb(0, 0, 0);
+}
+.btn{
+    display: none;
+}
+nav ul li:first-child{
+  
+    color: black;
+    padding: 10px;
+    font-weight: 600;
+    text-decoration: underline rgb(244, 6, 6) 4px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #254c59;
+    font-weight: bold;
+
+    transition: 0.8s;
+}
+
+nav a:hover{
+    text-decoration: underline red 4px;
+}
+
+.faBarre{
+    display: none;
+}
+main{
+    position: absolute;
+    top: 87vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 10%;
+    width: 75%;
+}
+main a{
+    text-decoration: none;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #efeded;
+}
+main button{
+    background-color: rgb(130, 21, 21);
+    padding: 10px;
+    border-radius: 10px;
+}
+main button:hover{
+    color: rgb(130, 17, 17);
+    background-color: #efeded;
+}
+main a:hover{
+    color: black;
+}
+main h5{
+    font-size: 14px;
+   
+}}
+body{
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+}

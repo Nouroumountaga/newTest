@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="btq.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Bienvenu sur la page  des devis</h1>
+    </header>
+    <section>
+        <div class="container">
+            <div class="row">
+                <img src="3d-deliveryman-waiving-hand-png.png" alt="">
+                <div class="form">
+                    <form action="" id="monFormulaire">
+                    <label for="">adresse Actuelle</label>                 <br>
+                    <input type="text" placeholder="adresse Actuelle" id="AddresseActuelle"><br>
+                    <label for="">adresse Destinataire</label><br>
+                    <input type="text" placeholder="adresse Destinataire" id="AddresseDestinataire"><br>
+                    <label for="">Contact</label><br>
+                    <input type="text" placeholder="ton numéro de téléphone" id="contact"><br>
+                    <label for="">Frais</label><br>
+                    <input type="text" placeholder="frais 1500fr"  id="frais"><br> <br>
+                    <input type="text" id="userN" style="display: none;" value="0">
+                    <div class="button">
+                        <input type="submit" class="submit" value="envoyer"> 
+                        <span class="span"> requète reussi <i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </form>
+            </div>
+            <div class="frmae">
+                <iframe frameborder="0" allowfullscreen allow="geolocation" src="//umap.openstreetmap.fr/fr/map/carte-sans-nom_957280?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=false&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=false&onLoadPanel=undefined&captionBar=false&captionMenus=true"></iframe><p><a href="//umap.openstreetmap.fr/fr/map/carte-sans-nom_957280?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=false&onLoadPanel=undefined&captionBar=false&captionMenus=true"></a></p>
+            </div>
+        </div>
+    </section>
+    <script>
+    var nombre_user = document.querySelector('#userN').value
+    var nombre = parseInt(nombre_user)
+    const formulaire = document.getElementById('monFormulaire');
+    formulaire.addEventListener('submit', function (e) {
+      e.preventDefault();
+        nombre += 1
+        var contact = document.getElementById('contact').value;
+        var AddresseActuelle = document.querySelector('#AddresseActuelle').value;
+        var AddresseDestinataire = document.querySelector('#AddresseDestinataire').value;
+        setTimeout(() => {
+          document.querySelector('.span').classList.add('active')
+          window.location.href = "live.html"
+        }, 2000);
+      // Utilisez IndexedDB pour stocker les données localement dans le navigateur
+      const request = window.indexedDB.open('ma_base_de_donnees', 1);
+      request.onupgradeneeded = function (event) {
+        const db = event.target.result;
+        const objectStore = db.createObjectStore('utilisateurs', { keyPath: 'id', autoIncrement: true });
+        objectStore.createIndex('AddresseActuelle', 'AddresseActuelle', { unique: false });
+        objectStore.createIndex('AddresseDestinataire', 'AddresseDestinataire', { unique: false });
+        objectStore.createIndex('contact', 'contact', { unique: false });
+      };
+
+      request.onsuccess = function (event) {
+        const db = event.target.result;
+        const transaction = db.transaction(['utilisateurs'], 'readwrite');
+        const objectStore = transaction.objectStore('utilisateurs');
+        const utilisateur = { AddresseActuelle,AddresseDestinataire,contact};
+        const request = objectStore.add(utilisateur);
+        request.onsuccess = function () {
+          console.log('Données enregistrées avec succès dans IndexedDB');
+          // Effectuez des actions supplémentaires si nécessaire
+        };
+        request.onerror = function (error) {
+          console.error('Erreur lors de l\'enregistrement des données : ', error);
+        };
+      };
+      request.onerror = function (error) {
+        console.error('Erreur lors de l\'ouverture de la base de données : ', error);
+      };
+    });
+    </script>
+</body>
+</html>

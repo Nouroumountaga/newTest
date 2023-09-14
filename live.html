@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="live.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Bienvenu sur la pages des livreurs</h1>
+    </header>
+    <div class="container">
+        <img src="icons8-cadeau-96.png" alt="" id="image" style="display: none;">
+    </div>
+    <script>
+
+        const request = window.indexedDB.open('ma_base_de_donnees', 1);
+
+        request.onsuccess = function (event) {
+            const db = event.target.result;
+
+            // Ouvrir une transaction en lecture seule sur le magasin "utilisateurs"
+            const transaction = db.transaction(['utilisateurs'], 'readonly');
+            const objectStore = transaction.objectStore('utilisateurs');
+
+            // Créer un curseur pour parcourir les données
+            const cursorRequest = objectStore.openCursor();
+
+            cursorRequest.onsuccess = function (event) {
+                const cursor = event.target.result;
+
+                if (cursor) {
+
+                    const AddresseActuelle = cursor.value.AddresseActuelle;
+                    const images = document.querySelector('#image')
+                    const img = document.createElement('img')
+                    img.src = images.src
+                    const AddresseDestinataire = cursor.value.AddresseDestinataire;
+                    const contact = cursor.value.contact;
+
+                    var button = document.createElement('button')
+                    button.textContent = "contact " + contact
+                    var icon = document.createElement('div')
+                    var article = document.createElement('div')
+
+                    icon.id = 'icon'
+                    article.id = "article"
+                    var ul = document.createElement('ul')
+                    var li = document.createElement('li')
+
+
+                    li.textContent = ['addresseActuelle:   ' + AddresseActuelle + '     addresseDestinataire:   ' + AddresseDestinataire]
+                    // Si le curseur a des données
+                    ul.appendChild(li)
+                    article.appendChild(ul)
+                    article.appendChild(button)
+                    icon.appendChild(img)
+                    icon.appendChild(article)
+
+                    document.querySelector('.container').appendChild(icon)
+
+                    // Afficher les données dans un élément HTML (par exemple, une liste)
+                    // Passer au prochain enregistrement
+                    cursor.continue();
+                }
+            };
+            cursorRequest.onerror = function (event) {
+                console.error('Erreur lors de la récupération des données : ', event.target.error);
+            };
+        };
+        localStorage.setItem('NombreUser', nombre_user)
+        request.onerror = function (event) {
+            console.error('Erreur lors de l\'ouverture de la base de données : ', event.target.error);
+        };
+
+
+    </script>
+</body>
+
+</html>
