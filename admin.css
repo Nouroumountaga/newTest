@@ -77,7 +77,7 @@ button:hover{
     .clear button{
         padding: 7px;
         background-color: #fff;
-        width: 10%;
+        width: 20%;
     }
     .row{
         display: grid;
